@@ -23,5 +23,6 @@ public protocol Assembly {
 public extension Assembly {
     func loaded(resolver _: Resolver) {
         // no-op
+        print("default implementation")
     }
 }

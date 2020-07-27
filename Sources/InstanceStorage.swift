@@ -11,7 +11,9 @@ public protocol InstanceStorage: AnyObject {
 }
 
 extension InstanceStorage {
-    public func graphResolutionCompleted() {}
+    public func graphResolutionCompleted() {
+        print("default implementation")
+    }
     public func instance(inGraph _: GraphIdentifier) -> Any? { return instance }
     public func setInstance(_ instance: Any?, inGraph _: GraphIdentifier) { self.instance = instance }
 }
@@ -21,7 +23,9 @@ public final class GraphStorage: InstanceStorage {
     private var instances = [GraphIdentifier: Weak<Any>]()
     public var instance: Any?
 
-    public init() {}
+    public init() {
+         print("default implementation")
+    }
 
     public func graphResolutionCompleted() {
         instance = nil
